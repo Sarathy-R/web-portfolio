@@ -15,8 +15,11 @@ jobs:
       - name: Print workspace info (debug)
         run: |
           echo "GITHUB_WORKSPACE=${GITHUB_WORKSPACE}"
-          pwd
+          echo "pwd=$(pwd)"
+          echo "ls root:"
           ls -la
+          echo "ls GITHUB_WORKSPACE:"
+          ls -la "${GITHUB_WORKSPACE}" || true
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,8 +34,9 @@ jobs:
 
       - name: Show dist contents (debug)
         run: |
-          echo "dist exists?"; ls -la ./dist || true
-          echo "dist tree:"; find ./dist -maxdepth 3 -type f -print || true
+          echo "dist path relative to pwd:"; ls -la ./dist || true
+          echo "dist path relative to GITHUB_WORKSPACE:"; ls -la "${GITHUB_WORKSPACE}/dist" || true
+          echo "dist tree:"; find "${GITHUB_WORKSPACE}/dist" -maxdepth 3 -type f -print || true
 
       - name: Deploy to gh-pages branch
         uses: peaceiris/actions-gh-pages@v3
@@ -40,4 +44,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/dist
           publish_branch: gh-pages
-          # optional: force_orphan: true   # uncomment if you want a clean orphan gh-pages branch
