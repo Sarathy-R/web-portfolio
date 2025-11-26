@@ -36,11 +36,15 @@ export const Header: React.FC = () => {
   };
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false);
-    }
+    setIsMobileMenuOpen(false);
+    // Add a small delay to allow the menu to start closing before scrolling
+    // This prevents layout shift conflicts on mobile browsers
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   const navLinks = [
@@ -136,19 +140,23 @@ export const Header: React.FC = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="absolute top-full left-0 w-full border-b border-gray-200 dark:border-white/10 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md md:hidden overflow-hidden"
+            className="absolute top-full left-0 w-full border-b border-gray-200 dark:border-white/10 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md md:hidden overflow-hidden shadow-xl"
           >
             <div className="flex flex-col p-4 gap-4">
               {navLinks.map((link) => (
-                <button
+                <a
                   key={link.id}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-left text-sm font-medium text-gray-900 dark:text-white/80 hover:text-primary dark:hover:text-white"
+                  href={`#${link.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(link.id);
+                  }}
+                  className="block w-full py-2 text-left text-base font-medium text-gray-900 dark:text-white/80 hover:text-primary dark:hover:text-white active:bg-gray-100 dark:active:bg-white/5 rounded-md px-2"
                 >
                   {link.label}
-                </button>
+                </a>
               ))}
-              <button className="h-10 w-full rounded-lg bg-primary text-sm font-bold text-white">
+              <button className="h-10 w-full rounded-lg bg-primary text-sm font-bold text-white shadow-lg shadow-primary/20">
                 Contact
               </button>
             </div>
