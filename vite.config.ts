@@ -5,6 +5,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   // Setting base to './' allows assets to be loaded relative to the index.html
-  // This is crucial for GitHub Pages where the app is often hosted in a subdirectory
   base: './',
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+  }
 });
