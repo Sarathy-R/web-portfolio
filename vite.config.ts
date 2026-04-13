@@ -4,8 +4,8 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  // Setting base to './' allows assets to be loaded relative to the index.html
-  base: './',
+  // Set base to repo name for GitHub Pages project repository
+  base: '/web-portfolio/',
   build: {
     outDir: 'dist',
     emptyOutDir: true,
