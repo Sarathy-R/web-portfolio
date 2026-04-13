@@ -7,50 +7,59 @@ import { ExperienceItem } from '../types';
 const experienceData: ExperienceItem[] = [
   {
     id: '1',
-    role: 'Data Engineering Senior Analyst',
+    role: 'Data Engineering, Management & Governance Senior Analyst',
     company: 'Accenture India',
-    period: 'Jun 2024 - Present',
+    period: 'Aug 2021 - Present',
     description: [
-      'Leading cloud modernization initiatives and implementing robust DevOps practices for enterprise-scale data systems.',
+      " Lead and mentor engineering teams, drive end-to-end system design, conduct design reviews, and collaborate with cross-functional stakeholders to ensure timely delivery of high-quality solutions in the life sciences domain.",
     ],
-    technologies: ['AWS', 'Terraform', 'Python', 'DevOps', 'Github'],
+    technologies: ['AWS', 'Terraform', 'Python', 'DevOps', 'Github', 'GitHub Actions', 'Django'],
     projects: [
       {
-        name: 'Study Document verification',
+        name: 'FDA Submission Compliance Analyzer',
         contributions: [
-         'Led CI/CD Migration from Jenkins to GitHub Actions, completing the transition in under a week and incorporating best practices like OIDC role-based authentication, improving security and maintainability of the deployment process',
-        'Accelerated Backend Deployment by 57% by introducing Docker image-based workflows into the CI/CD pipeline, improving environment consistency and reducing build-related delays',
-        'Built a Fully Automated CI/CD Pipeline for frontend deployments using GitHub Actions, reducing deployment time by over 70% (from ~20 minutes to under 5 minutes), eliminating manual steps and minimizing human error',
-        'Optimized AWS Lambda Performance by consolidating 20+ Lambda layers into a single reusable layer, resulting in a 20–40% reduction in cold start latency and improved runtime efficiency across production environments',
-      'Enhanced AWS Storage Architecture by implementing a robust solution for transferring large files (up to 5GB) from on-premise infrastructure to Amazon EFS, significantly improving data accessibility and storage scalability']
+          'Architected and developed a serverless backend on AWS using Lambda and Step Functions to orchestrate multi-stage compliance workflows, enabling automated consistency checks across multiple heterogeneous source file types at scale.',
+          "Identified a scalability bottleneck in the existing single-part upload mechanism and independently architected a multipart upload pipeline supporting files up to 5GB, leveraging Amazon EFS for persistent storage, eliminating file size constraints and future-proofing the application's storage layer.",
+          "Engineered a fully automated CI/CD pipeline using GitHub Actions with event-driven workflow triggers, replacing manual deployment scripts and reducing the deployment time by 70% (from ~20 minutes to under 5 minutes).",
+          "Eliminated AWS Lambda cold start overhead by refactoring 20+ redundant Lambda layers into a single optimized shared layer, reducing dependency resolution time and achieving a 20–40% reduction in cold start latency.",
+          "Spearheaded CI/CD pipeline migration from Jenkins to GitHub Actions in alignment with the organization’s new security policy, implementing OIDC role-based authentication to enforce least-privilege access and improve deployment security and auditability."]
+      },
+      {
+        name: 'Clinical Trial Randomization Data Management',
+        contributions: [
+          "Reverse-engineered & catalogued 6 Oracle database schemas in collaboration with business stakeholders, executing data discovery and filtration across 100+ tables to identify migration-eligible datasets conforming to the target application's data model requirements within a 3-month timeline.",
+          "Independently evaluated and proposed AWS DMS as the optimal CDC-based migration strategy, orchestrating a seamless data migration from Oracle source to PostgreSQL target, resolving cross-database data type incompatibilities across ~75GB of data records.",
+          "Engineered multi-stage post-migration transformation workflows in PostgreSQL, authoring 15+ complex SQL transformation scripts to restructure and normalize migrated datasets in compliance with the target application's business logic and data integrity constraints.",
+          "Developed and deployed 3 serverless AWS Lambda functions in Python, implementing event-driven data processing logic to power core workflows of the new application, ensuring seamless consumption of the migrated and transformed datasets."
+        ]
       }
     ]
   },
-  {
-    id: '2',
-    role: 'Data Engineering Analyst',
-    company: 'Accenture India',
-    period: 'Aug 2021 - May 2024',
-    description: [
-      'Engineered high-throughput event-driven applications using AWS Serverless architecture, optimizing for cost and performance.',
-      'Designed processing pipelines using Amazon Kinesis, SQS, and SNS handling millions of daily events reliably with 99.9% uptime.',
-      'Orchestrated microservices deployments with Kubernetes (EKS) and standardized Helm charts for consistent application deployment.'
-    ],
-    technologies: ['Python', 'AWS Lambda', 'Docker', 'Kinesis', 'PostgreSQL']
-  },
+  // {
+  //   id: '2',
+  //   role: 'Data Engineering Analyst',
+  //   company: 'Accenture India',
+  //   period: 'Aug 2021 - May 2024',
+  //   description: [
+  //     'Engineered high-throughput event-driven applications using AWS Serverless architecture, optimizing for cost and performance.',
+  //     'Designed processing pipelines using Amazon Kinesis, SQS, and SNS handling millions of daily events reliably with 99.9% uptime.',
+  //     'Orchestrated microservices deployments with Kubernetes (EKS) and standardized Helm charts for consistent application deployment.'
+  //   ],
+  //   technologies: ['Python', 'AWS Lambda', 'Docker', 'Kinesis', 'PostgreSQL']
+  // },
   {
     id: '3',
     role: 'Programming Analyst',
     company: 'Cognizant - Full Time',
     period: 'May 2019 - Aug 2021',
     description: [
-     'Designed and Developed NLP-Based Solutions as part of an internal R&D innovation team, creating multiple Proofs of Concept (POCs) for text classification, information extraction, and semantic analysis using Python and advanced NLP libraries',
-'Implemented Custom Information Extraction Pipelines to identify user-defined entities from biomedical research papers, significantly increasing data processing speed and reducing manual review time',
-'Enhanced Performance of Pre-Trained Models, optimizing a PageRank-based summarization algorithm and refining transformer-based abstractive models, leading to improved text coherence and model accuracy',
-'Built Scalable Backend Services using Python, Flask, and FastAPI, designing clean, modular architecture that improved API response times and simplified integration with machine learning pipelines',
-'Trained Custom Named Entity Recognition (NER) Models using Stanford NLP and spaCy, boosting extraction accuracy and enabling precise identification of domain-specific terms in unstructured text'],
-    technologies: ['Django', 'Flask', 'MongoDB', 'Redis', 'Nginx'],
- 
+      'Designed and Developed NLP-Based Solutions as part of an internal R&D innovation team, creating multiple Proofs of Concept (POCs) for text classification, information extraction, and semantic analysis using Python and advanced NLP libraries',
+      'Implemented Custom Information Extraction Pipelines to identify user-defined entities from biomedical research papers, significantly increasing data processing speed and reducing manual review time',
+      'Enhanced Performance of Pre-Trained Models, optimizing a PageRank-based summarization algorithm and refining transformer-based abstractive models, leading to improved text coherence and model accuracy',
+      'Built Scalable Backend Services using Python, Flask, and FastAPI, designing clean, modular architecture that improved API response times and simplified integration with machine learning pipelines',
+      'Trained Custom Named Entity Recognition (NER) Models using Stanford NLP and spaCy, boosting extraction accuracy and enabling precise identification of domain-specific terms in unstructured text'],
+    technologies: ['Python', 'Flask', 'Docker', 'NLP', 'Spacy', 'FastAPI'],
+
   }
 ];
 
@@ -91,7 +100,7 @@ export const Experience: React.FC = () => {
         {/* Continuous Gradient Line */}
         <div className="absolute left-8 top-2 bottom-2 w-0.5 bg-gradient-to-b from-primary via-emerald-500 to-transparent md:left-8 opacity-30"></div>
 
-        <motion.div 
+        <motion.div
           className="flex flex-col gap-12"
           variants={containerVariants}
           initial="hidden"
@@ -99,8 +108,8 @@ export const Experience: React.FC = () => {
           viewport={{ once: true, margin: "-100px" }}
         >
           {experienceData.map((item, index) => (
-            <motion.div 
-              key={item.id} 
+            <motion.div
+              key={item.id}
               variants={itemVariants}
               className="relative pl-12 md:pl-16 group"
             >
@@ -113,7 +122,7 @@ export const Experience: React.FC = () => {
               <div className="absolute left-[3.2rem] top-5 h-0.5 w-8 bg-gradient-to-r from-primary/50 to-transparent hidden md:block"></div>
 
               {/* Card */}
-              <motion.div 
+              <motion.div
                 whileHover={{ y: -5 }}
                 className="relative flex flex-col gap-5 rounded-2xl border border-gray-200 dark:border-white/5 bg-white dark:bg-surface-dark/60 p-6 shadow-sm dark:shadow-none backdrop-blur-sm transition-all duration-300 hover:border-primary/30 hover:shadow-2xl hover:shadow-primary/10"
               >
@@ -123,11 +132,11 @@ export const Experience: React.FC = () => {
                     <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
                       {item.role}
                     </h3>
-                    <div className="flex items-center gap-2 text-base font-medium text-gray-600 dark:text-gray-300">
+                    <div className="flex items-center gap-2 text-base font-medium text-gray-700 dark:text-gray-200">
                       <span>{item.company}</span>
                     </div>
                   </div>
-                  
+
                   <div className="mt-2 flex items-center gap-2 self-start rounded-full bg-primary/10 px-3 py-1.5 text-xs font-bold text-primary ring-1 ring-inset ring-primary/20 sm:mt-0">
                     <Calendar size={14} />
                     <span>{item.period}</span>
@@ -138,7 +147,7 @@ export const Experience: React.FC = () => {
                 {item.description && item.description.length > 0 && (
                   <ul className="flex flex-col gap-3">
                     {item.description.map((desc, i) => (
-                      <li key={i} className="flex gap-3 text-sm leading-relaxed text-gray-600 dark:text-gray-400">
+                      <li key={i} className="flex gap-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                         <span className="mt-1.5 min-w-[6px] max-w-[6px] h-1.5 rounded-full bg-primary/60"></span>
                         <span>{desc}</span>
                       </li>
@@ -154,8 +163,8 @@ export const Experience: React.FC = () => {
                     </h4>
                     <div className="flex flex-col gap-4">
                       {item.projects.map((project, idx) => (
-                        <div 
-                          key={idx} 
+                        <div
+                          key={idx}
                           className="flex flex-col gap-2 rounded-xl border border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/5 p-4 transition-colors hover:bg-gray-100 dark:hover:bg-white/10"
                         >
                           <h5 className="text-sm font-bold text-primary">
@@ -163,9 +172,9 @@ export const Experience: React.FC = () => {
                           </h5>
                           <ul className="flex flex-col gap-1.5 pl-3">
                             {project.contributions.map((contribution, cIdx) => (
-                               <li key={cIdx} className="list-disc text-xs leading-relaxed text-gray-600 dark:text-gray-400 marker:text-gray-400 dark:marker:text-gray-600">
-                                  {contribution}
-                               </li>
+                              <li key={cIdx} className="list-disc text-sm leading-relaxed text-gray-700 dark:text-gray-300 marker:text-gray-500 dark:marker:text-gray-500">
+                                {contribution}
+                              </li>
                             ))}
                           </ul>
                         </div>
@@ -178,7 +187,7 @@ export const Experience: React.FC = () => {
                 {item.technologies && (
                   <div className="mt-2 flex flex-wrap gap-2 border-t border-gray-100 dark:border-white/5 pt-4">
                     {item.technologies.map((tech) => (
-                      <span 
+                      <span
                         key={tech}
                         className="rounded-md bg-gray-100 dark:bg-white/5 px-2.5 py-1 text-xs font-medium text-gray-700 dark:text-gray-300 transition-colors hover:bg-gray-200 dark:hover:bg-white/10 hover:text-primary dark:hover:text-white"
                       >

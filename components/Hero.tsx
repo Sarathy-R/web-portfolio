@@ -32,7 +32,7 @@ export const Hero: React.FC = () => {
               transition={{ delay: 0.3, duration: 0.5 }}
               className="mt-4 text-lg font-normal leading-relaxed text-gray-600 dark:text-gray-400 max-w-xl"
             >
-              Senior Software Engineer | Python, AWS, & DevOps Specialist. A passionate developer with over 6.5 years of experience building scalable, resilient systems in the cloud.
+              Senior Software Engineer | Senior Data Engineering | Python, AWS, & DevOps Specialist. A passionate developer with over 7+ years of experience building scalable, resilient systems in the cloud.
             </motion.p>
           </div>
         </motion.div>
@@ -44,21 +44,30 @@ export const Hero: React.FC = () => {
         transition={{ delay: 0.4, duration: 0.5 }}
         className="flex w-full max-w-[560px] flex-wrap gap-4"
       >
-        <button className="group flex h-12 flex-1 min-w-[160px] cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-6 text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25">
+        <button 
+          onClick={() => {
+            const link = document.createElement('a');
+            link.href = '/resume/Sarathy_Ranganathan_Resume.pdf';
+            link.download = 'Sarathy_Ranganathan_Resume.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+          }}
+          className="group flex h-12 flex-1 min-w-[160px] cursor-pointer items-center justify-center gap-2 rounded-xl bg-primary px-6 text-base font-bold text-white transition-all duration-300 hover:scale-105 hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/25">
           <Download size={20} className="transition-transform duration-300 group-hover:-translate-y-1" />
           <span className="truncate">Download Resume</span>
         </button>
-        <button className="group flex h-12 flex-1 min-w-[160px] cursor-pointer items-center justify-center gap-2 rounded-xl bg-gray-200 dark:bg-surface-dark px-6 text-base font-bold text-gray-900 dark:text-white transition-all duration-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-white/10 hover:shadow-lg">
+        {/* <button className="group flex h-12 flex-1 min-w-[160px] cursor-pointer items-center justify-center gap-2 rounded-xl bg-gray-200 dark:bg-surface-dark px-6 text-base font-bold text-gray-900 dark:text-white transition-all duration-300 hover:scale-105 hover:bg-gray-300 dark:hover:bg-white/10 hover:shadow-lg">
           <Mail size={20} className="transition-transform duration-300 group-hover:rotate-12" />
           <span className="truncate">Contact Me</span>
-        </button>
+        </button> */}
         <div className="flex gap-4">
-          <a href="#" className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-200 dark:bg-surface-dark text-gray-700 dark:text-white transition-all duration-300 hover:scale-110 hover:bg-[#0077b5] hover:text-white hover:shadow-lg">
+          <a href="https://www.linkedin.com/in/sarathy-ranganathan/" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-200 dark:bg-surface-dark text-gray-700 dark:text-white transition-all duration-300 hover:scale-110 hover:bg-[#0077b5] hover:text-white hover:shadow-lg">
             <Linkedin size={22} />
           </a>
-          <a href="#" className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-200 dark:bg-surface-dark text-gray-700 dark:text-white transition-all duration-300 hover:scale-110 hover:bg-[#333] hover:text-white hover:shadow-lg">
+          {/* <a href="https://github.com/Sarathy-R" target="_blank" rel="noopener noreferrer" className="flex h-12 w-12 items-center justify-center rounded-xl bg-gray-200 dark:bg-surface-dark text-gray-700 dark:text-white transition-all duration-300 hover:scale-110 hover:bg-[#333] hover:text-white hover:shadow-lg">
             <Github size={22} />
-          </a>
+          </a> */}
         </div>
       </motion.div>
     </section>

@@ -5,6 +5,7 @@ import { Experience } from './components/Experience';
 import { Expertise } from './components/Expertise';
 import { Articles } from './components/Articles';
 import { Certifications } from './components/Certifications';
+import { Achievements } from './components/Achievements';
 import { BackToTop } from './components/BackToTop';
 
 const App: React.FC = () => {
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Hero />
           <Experience />
           <Expertise />
+          <Achievements />
           <Articles />
           <Certifications />
         </div>

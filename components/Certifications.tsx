@@ -5,10 +5,10 @@ import { SectionContainer } from './SectionContainer';
 import { CertificationItem } from '../types';
 
 const certificationsData: CertificationItem[] = [
-  { id: '1', name: 'AWS Certified Solutions Architect - Associate', iconName: 'verified' },
-  { id: '2', name: 'AWS Certified Developer - Associate', iconName: 'developer_mode' },
-  { id: '3', name: 'AWS Certified SysOps Administrator - Associate', iconName: 'monitoring' },
-  { id: '4', name: 'Certified Kubernetes Administrator (CKA)', iconName: 'deployed_code' },
+  // { id: '1', name: 'AWS Certified Solutions Architect - Associate', iconName: 'verified', yearRange: '2023' },
+  { id: '2', name: 'AWS Certified Developer - Associate', iconName: 'developer_mode', yearRange: '2025' },
+  // { id: '3', name: 'AWS Certified SysOps Administrator - Associate', iconName: 'monitoring', yearRange: '2024' },
+  // { id: '4', name: 'Certified Kubernetes Administrator (CKA)', iconName: 'deployed_code', yearRange: '2024' },
 ];
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -55,6 +55,9 @@ export const Certifications: React.FC = () => {
             {iconMap[cert.iconName]}
             <p className="text-base font-bold leading-snug text-gray-900 group-hover:text-primary dark:text-white transition-colors">
               {cert.name}
+            </p>
+            <p className="mt-3 text-sm text-gray-500 dark:text-gray-400">
+              {cert.yearRange}
             </p>
           </motion.div>
         ))}

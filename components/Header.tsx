@@ -50,35 +50,36 @@ export const Header: React.FC = () => {
   const navLinks = [
     { label: 'Experience', id: 'experience' },
     { label: 'Expertise', id: 'expertise' },
+    { label: 'Achievements', id: 'achievements' },
     { label: 'Articles', id: 'articles' },
     { label: 'Certifications', id: 'certifications' },
   ];
 
   return (
     <header
-      className={`sticky top-0 z-50 flex items-center justify-center border-b px-4 py-3 transition-all duration-300 ${
+      className={`sticky top-0 z-50 flex items-center justify-center border-b px-4 py-6 transition-all duration-300 ${
         isScrolled
           ? 'border-gray-200 dark:border-white/10 bg-white/90 dark:bg-background-dark/95 backdrop-blur-md shadow-sm'
           : 'border-transparent bg-transparent backdrop-blur-sm'
       }`}
     >
-      <div className="flex w-full max-w-[960px] items-center justify-between">
+      <div className="flex w-full max-w-[960px] items-center justify-between gap-8">
         <div 
           className="flex items-center gap-3 cursor-pointer group"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           <div className="relative flex items-center justify-center text-primary transition-transform duration-300 group-hover:scale-110">
             <Hexagon size={28} strokeWidth={2.5} />
-            <span className="absolute text-[10px] font-bold text-white">SR</span>
+            <span className="absolute text-[10px] font-bold text-black">SR</span>
           </div>
-          <h2 className="hidden text-lg font-bold leading-tight tracking-tight sm:block text-gray-900 dark:text-white">
-            Sarathy Ranganathan
-          </h2>
+          <h3 className="hidden text-lg font-bold leading-tight tracking-tight sm:block text-gray-900 dark:text-white">
+             Hi, I'm Sarathy
+          </h3>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden items-center gap-6 md:flex">
-          <div className="flex items-center gap-6">
+        <div className="hidden items-center gap-12 md:flex">
+          <div className="flex items-center gap-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -110,9 +111,9 @@ export const Header: React.FC = () => {
             </AnimatePresence>
           </button>
 
-          <button className="flex h-10 min-w-[84px] cursor-pointer items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20">
+          {/* <button className="flex h-10 min-w-[84px] cursor-pointer items-center justify-center rounded-lg bg-primary px-4 text-sm font-bold text-white transition-all hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/20">
             Contact
-          </button>
+          </button> */}
         </div>
 
         {/* Mobile Menu Controls */}
@@ -142,7 +143,7 @@ export const Header: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
             className="absolute top-full left-0 w-full border-b border-gray-200 dark:border-white/10 bg-white/95 dark:bg-background-dark/95 backdrop-blur-md md:hidden overflow-hidden shadow-xl"
           >
-            <div className="flex flex-col p-4 gap-4">
+            <div className="flex flex-col p-6 gap-6">
               {navLinks.map((link) => (
                 <a
                   key={link.id}
