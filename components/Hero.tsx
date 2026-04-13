@@ -3,6 +3,7 @@ import { Download, Linkedin, Github, Mail } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 export const Hero: React.FC = () => {
+  const baseUrl = import.meta.env.BASE_URL;
   return (
     <section id="profile" className="flex flex-col gap-10 pt-10 sm:pt-16">
       <div className="flex w-full flex-col gap-10 md:flex-row md:items-center">
@@ -14,7 +15,7 @@ export const Hero: React.FC = () => {
         >
           <div 
             className="h-32 w-32 shrink-0 rounded-full border-4 border-white dark:border-surface-dark bg-cover bg-center shadow-2xl transition-transform duration-500 hover:scale-105 hover:border-primary/50"
-            style={{ backgroundImage: 'url("/image/naukri_image.jfif")' }}
+            style={{ backgroundImage: `url('${baseUrl}image/naukri_image.jfif')` }}
             aria-label="Professional headshot of Sarathy Ranganathan"
           />
           <div className="flex flex-col justify-center">
@@ -47,7 +48,7 @@ export const Hero: React.FC = () => {
         <button 
           onClick={() => {
             const link = document.createElement('a');
-            link.href = '/resume/Sarathy_Ranganathan_Resume.pdf';
+            link.href = `${baseUrl}resume/Sarathy_Ranganathan_Resume.pdf`;
             link.download = 'Sarathy_Ranganathan_Resume.pdf';
             document.body.appendChild(link);
             link.click();
