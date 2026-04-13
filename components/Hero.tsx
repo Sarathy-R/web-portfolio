@@ -14,7 +14,7 @@ export const Hero: React.FC = () => {
         >
           <div 
             className="h-32 w-32 shrink-0 rounded-full border-4 border-white dark:border-surface-dark bg-cover bg-center shadow-2xl transition-transform duration-500 hover:scale-105 hover:border-primary/50"
-            style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=256&q=80")' }}
+            style={{ backgroundImage: 'url("/image/naukri_image.jfif")' }}
             aria-label="Professional headshot of Sarathy Ranganathan"
           />
           <div className="flex flex-col justify-center">
