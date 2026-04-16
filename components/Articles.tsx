@@ -28,6 +28,14 @@ const articlesData: ArticleItem[] = [
     category: 'AI',
     imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
     url: 'https://sarathy-r.medium.com/writing-better-prompts-tips-for-developer-part-1-d6f8d4e6b83d'
+  },
+    {
+    id: '4',
+    title: 'Modern Python: Staying up to date',
+    summary: 'If you haven’t updated your coding patterns since Python 3.7, you’re missing out on features that make your scripts significantly cleaner.',
+    category: 'Python',
+    imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80',
+    url: 'https://medium.com/@sarathy-r/modern-python-staying-up-to-date-10ab931d202a'
   }
 ];
 
