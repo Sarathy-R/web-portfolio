@@ -16,6 +16,12 @@ const achievementsData: AchievementItem[] = [
     title: 'North Star - Pinnacle Award FY24 (Accenture India)',
     description: 'Recognized for taking initiative, going above and beyond, and consistently delivering exceptional results that significantly contributed to the success of the project and client satisfaction.',
     iconName: 'star'
+  },
+  {
+    id: '3',
+    title: 'Accenture – Success Catalyst (FY26, Q2)',
+    description: 'Acknowledged my efforts for completion of complex project.',
+    iconName: 'award'
   }
 ];
 
@@ -56,7 +62,7 @@ export const Achievements: React.FC = () => {
           <motion.div 
             key={achievement.id}
             variants={itemVariants}
-            className="group flex flex-col items-start rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 dark:border-transparent dark:bg-surface-dark dark:hover:bg-white/5 dark:hover:shadow-primary/10"
+            className="group flex flex-col items-start rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:-translate-y-2 hover:border-primary/20 hover:shadow-xl hover:shadow-primary/5 dark:border-gray-800 dark:bg-gray-900/50"
           >
             {iconMap[achievement.iconName]}
             <h3 className="mb-3 text-xl font-bold text-gray-900 group-hover:text-primary dark:text-white transition-colors">
