@@ -45,7 +45,7 @@ const expertiseData: SkillCategory[] = [
   {
     title: 'Tools',
     skills: [
-      { name: 'Databricks', iconUrl: 'https://www.databricks.com/en/favicon.ico' },
+      { name: 'Databricks', iconUrl: 'https://www.svgrepo.com/svg/330261/databricks' },
       { name: 'Airflow', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apacheairflow/apacheairflow-original.svg' },
     ]
   }
