@@ -35,18 +35,17 @@ const expertiseData: SkillCategory[] = [
   {
     title: 'Frameworks & Libraries',
     skills: [
-      { name: 'Django', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg' },
       { name: 'Flask', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg' },
+      { name: 'FastAPI', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
       { name: 'pandas', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
       { name: 'NumPy', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
       { name: 'PySpark', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original.svg' },
-      // { name: 'FastAPI', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg' },
     ]
   },
   {
     title: 'Tools',
     skills: [
-      { name: 'Databricks', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/databricks/databricks-original.svg' },
+      { name: 'Databricks', iconUrl: 'https://www.databricks.com/en/favicon.ico' },
       { name: 'Airflow', iconUrl: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apacheairflow/apacheairflow-original.svg' },
     ]
   }
